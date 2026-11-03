@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Dropday Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column in Dropday's black-and-lime look; a lime timeline rule under the header; sticky section bar */
+:root {
+  --bg: #0A0A0C;
+  --surface: #17171C;
+  --fg: #F4F4F0;
+  --muted: #B4B4BA;
+  --line: #2A2A31;
+  --lime: #C8FF2E;
+  --ink: #0A0A0C;
+  --display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 16px; line-height: 1.6 }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg) }
+.wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+a { color: var(--lime); text-underline-offset: 3px }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; border-radius: 6px }
+
+header.top { padding-block: 48px 32px }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lime); margin-bottom: 18px }
+.brand svg { width: 40px; height: 40px; border-radius: 10px; flex: none }
+h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(40px, 9vw, 64px); line-height: 0.98; margin: 0 0 16px; letter-spacing: 0.01em; text-wrap: balance }
+h1 span { color: var(--lime) }
+.lede { color: var(--muted); margin: 0; max-width: 60ch }
+.rule { height: 4px; background: var(--lime) }
+
+nav.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line) }
+nav.bar ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 8px 0; overflow-x: auto }
+nav.bar a { display: block; white-space: nowrap; padding: 8px 12px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--fg); text-decoration: none }
+nav.bar a:hover { background: var(--surface) }
+
+section { padding-block: 40px 8px; scroll-margin-top: 64px }
+section + section { border-top: 1px solid var(--line) }
+h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 34px; line-height: 1.05; margin: 0 0 8px; letter-spacing: 0.01em; text-wrap: balance }
+h3 { font-size: 17px; margin: 28px 0 6px; font-weight: 700 }
+p, li { max-width: 65ch }
+ul.plain { padding-left: 20px; margin: 8px 0 }
+ul.plain li { margin-bottom: 6px }
+ul.plain li::marker { color: var(--lime) }
+.meta { font-family: var(--mono); font-size: 13px; color: var(--muted); margin: 0 0 16px }
+
+.contact { background: var(--surface); border: 1.5px solid var(--lime); border-radius: 16px; padding: 20px; margin: 18px 0 8px; display: grid; gap: 12px }
+.contact .label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime) }
+.email-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
+.email { font-family: var(--mono); font-size: 17px; word-break: break-all; user-select: all }
+button.copy { font: inherit; font-size: 14px; font-weight: 700; min-height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: var(--lime); color: var(--ink); cursor: pointer }
+button.copy:hover { filter: brightness(1.08) }
+.small { font-size: 14px; color: var(--muted); margin: 0 }
+
+details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 10px 0; max-width: 65ch }
+summary { cursor: pointer; padding: 14px 16px; font-weight: 700; list-style-position: inside }
+summary::marker { color: var(--lime) }
+details > div { padding: 0 16px 14px }
+details p { margin: 0 0 8px; color: #DADAD6 }
+
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 32px }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth } }
+</style>
+
+</head>
+<body>
+<header class="top wrap">
+  <div class="brand"><svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="114" fill="#C8FF2E"/><circle cx="256" cy="256" r="182" fill="#0A0A0C"/><circle cx="256" cy="256" r="150" fill="none" stroke="#26262D" stroke-width="3"/><circle cx="256" cy="256" r="72" fill="#C8FF2E"/><path d="M256 214 L256 286 M228 260 L256 290 L284 260" fill="none" stroke="#0A0A0C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>Dropday</div>
+  <h1>Help, privacy<br><span>and terms.</span></h1>
+  <p class="lede">Support for Dropday: Music Release Planner, the iPhone app that turns your release date into a dated rollout plan. Made by Chris Anderson in Ontario, Canada.</p>
+</header>
+<div class="rule" aria-hidden="true"></div>
+
+<nav class="bar" aria-label="Page sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#support">Support</a></li>
+      <li><a href="#dropday-privacy">Privacy policy</a></li>
+      <li><a href="#terms">Terms of use</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="support" aria-labelledby="support-h">
+  <h2 id="support-h">Support</h2>
+  <p>Email is the fastest way to reach us. Include your iPhone model and what you were doing when the problem happened, and we reply within 2 business days.</p>
+  <div class="contact">
+    <span class="label">Support email</span>
+    <div class="email-row">
+      <span class="email" id="email">andersonapps.help@gmail.com</span>
+      <button class="copy" id="copy" type="button">Copy address</button>
+    </div>
+    <p class="small" id="copy-status" role="status" aria-live="polite"></p>
+  </div>
+
+  <h3>Common questions</h3>
+  <details>
+    <summary>How do I cancel my subscription?</summary>
+    <div><p>Subscriptions are billed by Apple, so you manage them on your iPhone: open Settings, tap your name, then Subscriptions, and choose Dropday. Cancel at least 24 hours before the renewal date to avoid the next charge. Deleting the app does not cancel a subscription.</p></div>
+  </details>
+  <details>
+    <summary>How do I get a refund?</summary>
+    <div><p>Apple handles all refunds. Request one at reportaproblem.apple.com using the Apple Account you paid with.</p></div>
+  </details>
+  <details>
+    <summary>I paid, but the app still shows the paywall</summary>
+    <div><p>Open the paywall and tap Restore. Make sure you are signed in with the same Apple Account you used to subscribe. If that does not fix it, email us.</p></div>
+  </details>
+  <details>
+    <summary>I changed my release date. What happens to my plan?</summary>
+    <div><p>Edit the date on the release and every task, deadline and reminder moves with it. If the new date leaves too little time for an editorial pitch, Dropday tells you.</p></div>
+  </details>
+  <details>
+    <summary>Will my releases move to a new iPhone?</summary>
+    <div><p>Your releases and tasks are stored only on your iPhone. They move to a new phone when you restore it from an iCloud or computer backup. There is no separate account or cloud copy.</p></div>
+  </details>
+  <details>
+    <summary>Which iPhones get AI polish in Pitch Builder?</summary>
+    <div><p>AI polish uses Apple Intelligence, which runs on iPhone 15 Pro and newer with it turned on in Settings. Every other iPhone still gets a full pitch from Pitch Builder's built-in templates.</p></div>
+  </details>
+  <details>
+    <summary>I'm not getting reminders</summary>
+    <div><p>Open Settings, tap Notifications, choose Dropday and turn on Allow Notifications. Focus modes can also hold reminders back, so add Dropday to any Focus you use during the day.</p></div>
+  </details>
+</section>
+
+<section id="dropday-privacy" aria-labelledby="dd-h">
+  <h2 id="dd-h">Privacy policy</h2>
+  <p class="meta">Effective November 2026</p>
+  <p>Dropday is built to keep your release plans on your iPhone. We do not run accounts, ads or tracking.</p>
+
+  <h3>What stays on your iPhone</h3>
+  <ul class="plain">
+    <li>Your releases, dates, tasks and notes.</li>
+    <li>Your answers in Pitch Builder and the pitches it writes. When AI polish is used, it runs on your iPhone through Apple Intelligence, not on our servers.</li>
+    <li>Reminders, which are scheduled on your iPhone as local notifications.</li>
+  </ul>
+  <p>We cannot see any of this, and we have no copy of it.</p>
+
+  <h3>What leaves your iPhone</h3>
+  <ul class="plain">
+    <li><strong>Purchases.</strong> Apple processes all payments. We never receive your card details, name or email.</li>
+    <li><strong>Subscription status.</strong> We use RevenueCat to confirm your subscription. It receives a random app user ID and your purchase history from Apple, never your name, email or release data. See RevenueCat's privacy policy at <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.</li>
+    <li><strong>App Store statistics.</strong> Apple may share anonymous usage and crash data with us if you agreed to share it with app developers in your iPhone settings.</li>
+  </ul>
+
+  <h3>Children</h3>
+  <p>Dropday is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+  <h3>Your choices</h3>
+  <p>Deleting Dropday deletes everything it stored on your iPhone. To ask about or delete the subscription records RevenueCat holds, email us at the support address above. We handle personal information in line with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+
+  <h3>Changes</h3>
+  <p>If this policy changes, we will update the effective date above. Material changes will also be noted in the app's release notes.</p>
+</section>
+
+<section id="terms" aria-labelledby="terms-h">
+  <h2 id="terms-h">Terms of use</h2>
+  <p>Dropday is licensed under Apple's Standard Licensed Application End User License Agreement: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
+  <h3>Subscription</h3>
+  <p>Dropday Pro costs $4.99 per month or $29.99 per year (US prices), each with a 3-day free trial. Prices in other countries are set by Apple and shown before you subscribe. Payment is charged to your Apple Account when the free trial ends. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Cancel any time in your Apple Account settings; any unused part of a free trial ends when you subscribe.</p>
+  <h3>Your content</h3>
+  <p>You own everything you write in Dropday. Pitches the app suggests are drafts: review them before you send them. Platform deadlines in your plan follow each platform's published guidance and can change, so confirm important dates in your distributor and artist dashboards.</p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p style="margin:0">Dropday is made by Chris Anderson, Ontario, Canada. Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.</p>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var status = document.getElementById('copy-status');
+  var email = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = 'Address selected. Copy it from the menu.';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        status.textContent = 'Copied.';
+      }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+
+</body>
+</html>
