@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotlist Support</title>
+<meta name="description" content="Help, privacy policy and terms for Hotlist: Open House Follow Up.">
+<style>
+  :root { --ink: #16130F; --soft: #5F5A54; --bg: #F7F5F2; --card: #FFFFFF; --dark: #121212; --hot: #C2410C; --line: #E7E5E4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  header { background: var(--dark); color: #fff; padding: 40px 20px 28px; }
+  header .wrap, main { max-width: 760px; margin: 0 auto; }
+  .brand { font-weight: 800; letter-spacing: 0.12em; font-size: 13px; color: #FDBA74; text-transform: uppercase; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 8px 0 12px; }
+  header p { color: #D6D3CE; margin: 0 0 18px; }
+  nav { display: flex; flex-wrap: wrap; gap: 10px; }
+  nav a { color: #fff; border: 1px solid #44403C; border-radius: 999px; padding: 8px 14px; text-decoration: none; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; }
+  nav a:hover { border-color: #FDBA74; }
+  main { padding: 8px 20px 64px; }
+  section { margin-top: 36px; }
+  h2 { font-size: 26px; margin: 0 0 6px; scroll-margin-top: 16px; }
+  h3 { font-size: 19px; margin: 26px 0 6px; }
+  .meta { color: var(--soft); font-size: 15px; margin: 0 0 12px; }
+  a { color: var(--hot); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .email { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .email strong { font-size: 18px; }
+  button { font: inherit; font-size: 15px; font-weight: 600; background: var(--dark); color: #fff; border: 0; border-radius: 10px; padding: 10px 14px; min-height: 44px; cursor: pointer; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; }
+  summary { cursor: pointer; padding: 14px 16px; font-weight: 600; min-height: 44px; }
+  details > div { padding: 0 16px 14px; }
+  ul.plain { padding-left: 20px; }
+  ul.plain li { margin: 6px 0; }
+  footer { color: var(--soft); font-size: 14px; margin-top: 48px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Hotlist</div>
+    <h1>Help, privacy and terms.</h1>
+    <p>Hotlist turns open house visitors into clients: sign-in, a ranked Hot List, and follow-up texts written from your own notes.</p>
+    <nav aria-label="On this page">
+      <a href="#support">Support</a>
+      <a href="#hotlist-privacy">Privacy policy</a>
+      <a href="#visitors">If you signed in at an open house</a>
+      <a href="#terms">Terms of use</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="support" aria-labelledby="support-h">
+  <h2 id="support-h">Support</h2>
+  <p>Questions, bugs or ideas: email us and a real person will reply within 2 business days.</p>
+  <div class="card email">
+    <strong id="addr">andersonapps.help@gmail.com</strong>
+    <button type="button" id="copy" aria-describedby="addr">Copy address</button>
+  </div>
+
+  <h3>Common questions</h3>
+
+  <details><summary>How do I cancel my subscription?</summary><div>
+    <p>On your iPhone, open Settings, tap your name, then Subscriptions, then Hotlist, and tap Cancel Subscription. You keep Pro until the end of the period you've paid for. Your visitors and lead export stay available after you cancel.</p>
+  </div></details>
+
+  <details><summary>How do I get a refund?</summary><div>
+    <p>Apple handles all payments, so refunds are requested from Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>. We can't issue refunds ourselves.</p>
+  </div></details>
+
+  <details><summary>I paid, but the app still shows the paywall</summary><div>
+    <p>Open Hotlist, go to Settings and tap Restore Purchases, signed in with the same Apple Account you paid with. If it still doesn't unlock, email us the date you subscribed.</p>
+  </div></details>
+
+  <details><summary>Why do I have to tap Send on every text?</summary><div>
+    <p>iPhone apps aren't allowed to send texts on your behalf. Hotlist writes each follow-up and opens it in a text from your own number, so you stay in control of every message. The Send next queue moves you through them one after another: 20 texts take about a minute.</p>
+  </div></details>
+
+  <details><summary>A visitor replied. How do I stop their follow-ups?</summary><div>
+    <p>Open the visitor and tap Replied or Booked a showing. Their remaining follow-ups stop. Hotlist can't read your messages, so it relies on you to mark replies. If someone texts STOP, tap Opted out and Hotlist won't write to them again.</p>
+  </div></details>
+
+  <details><summary>Can I get my leads out if I cancel?</summary><div>
+    <p>Yes, always. Settings, then Export leads, gives you a spreadsheet of every visitor, Pro or not. We never lock leads you already captured.</p>
+  </div></details>
+
+  <details><summary>Which CRMs work with Hotlist?</summary><div>
+    <p>BoldTrail (kvCORE) and Follow Up Boss connect directly. Any other CRM can connect with a webhook URL, for example through Zapier or your CRM's lead inbox. Go to Settings, then Connect a CRM. Each visitor is sent to your CRM when they sign in, with your voice note and Hot List score.</p>
+  </div></details>
+
+  <details><summary>My BoldTrail link expired</summary><div>
+    <p>BoldTrail tokens last one year. Hotlist reminds you 30 days before. To renew, in BoldTrail go to Lead Engine, then Lead Dropbox, then My API Tokens, generate a new Contacts token and paste it in Hotlist under Settings, then Connect a CRM, then BoldTrail. Visitors waiting to sync go through as soon as you reconnect.</p>
+  </div></details>
+
+  <details><summary>Visitors are getting two sets of texts</summary><div>
+    <p>Your CRM may be texting new leads too, for example through a Follow Up Boss action plan. Hotlist tags the visitors it's texting "Hotlist: texting". Leave that tag out of your CRM's automatic texts, or switch Hotlist to let your CRM send the follow-ups (Settings, then Who sends follow-ups).</p>
+  </div></details>
+
+  <details><summary>Can visitors sign in on their own phone?</summary><div>
+    <p>Yes. Open the listing, tap QR sign-in, then print the sign or leave your sign-in screen up: it shows a small code too. Visitors scan it with their camera and fill in the same questions and text box on their own phone, no app needed. Their sign-in reaches your Hot List within about 20 seconds during the open house while Hotlist is open, or the next time you open it. A printed code keeps working for 30 days, so flyers work too. QR sign-in needs a connection on the visitor's phone and on yours.</p>
+  </div></details>
+
+  <details><summary>Does sign-in work with no signal?</summary><div>
+    <p>Yes. Sign-in on your device, the Hot List and voice notes all work offline. CRM syncs wait and go through when you're back online. QR sign-in on visitors' phones needs a connection.</p>
+  </div></details>
+
+  <details><summary>I forgot my kiosk PIN</summary><div>
+    <p>On the PIN screen, tap Use Face ID (or your iPhone passcode) to leave sign-in mode, then set a new PIN in Settings.</p>
+  </div></details>
+
+  <details><summary>Will my visitors move to a new iPhone?</summary><div>
+    <p>Yes. With Sync with iCloud on (Hotlist Settings), sign in to the new iPhone with the same Apple Account and open Hotlist: your visitors come down from iCloud. Set your kiosk PIN and reconnect your CRM on the new iPhone, since those stay on each device. You can also export your leads first as an extra copy.</p>
+  </div></details>
+
+  <details><summary>Do my iPhone and iPad share visitors?</summary><div>
+    <p>Yes, when both are signed in to the same Apple Account and Sync with iCloud is on in Hotlist's Settings (it's on unless you turn it off; needs iOS 17 or later). Visitors who sign in on the iPad show up on your iPhone's Hot List, usually within a minute. Only one device sends visitors to your CRM: the last one you connected it on.</p>
+  </div></details>
+
+  <details><summary>Which iPhones get AI writing?</summary><div>
+    <p>iPhones with Apple Intelligence (iPhone 15 Pro and newer) polish your follow-ups on the phone itself. Every other iPhone gets the same follow-ups from smart templates built from your voice notes.</p>
+  </div></details>
+
+  <details><summary>I'm not getting follow-up reminders</summary><div>
+    <p>Check that notifications are on for Hotlist (iPhone Settings, Notifications, Hotlist). Reminders need Hotlist Pro, and they're held between 9pm and 8am, so anything due overnight arrives at 8am.</p>
+  </div></details>
+</section>
+
+<section id="hotlist-privacy" aria-labelledby="privacy-h">
+  <h2 id="privacy-h">Privacy policy</h2>
+  <p class="meta">Effective February 2027</p>
+  <p>Hotlist is made by Chris Anderson in Ontario, Canada. Your visitors' details are your business: Hotlist keeps them on your devices and in your own iCloud, not on our servers (QR sign-ins cross our relay only in encrypted form; see below). We don't run accounts, ads or tracking.</p>
+
+  <h3>What stays on your devices</h3>
+  <ul class="plain">
+    <li>Your name, brokerage, mobile number, photo and settings.</li>
+    <li>Your open houses and listings.</li>
+    <li>Visitors' names, phone numbers, emails, answers to the sign-in questions, and proof of their text consent (when they agreed and the wording they saw).</li>
+    <li>Your voice notes. Recording only starts when you tap the microphone, and speech is turned into text on your iPhone. Audio is not kept after it's transcribed.</li>
+    <li>Follow-up texts. When AI is used, it runs on your iPhone through Apple Intelligence, not on our servers.</li>
+    <li>Follow-up reminders, scheduled on your iPhone as local notifications.</li>
+    <li>With Sync with iCloud on (the default), this data and your photos are also stored in your own iCloud account so your iPhone and iPad share it and it moves to a new iPhone. Apple holds it under your account; we can't see it. Your kiosk PIN and CRM keys never sync.</li>
+  </ul>
+  <p>When you send a text, Hotlist opens it in your iPhone's own messaging screen. Apple sends it from your number; we never see it.</p>
+
+  <h3>What leaves your devices</h3>
+  <ul class="plain">
+    <li><strong>Your CRM, if you connect one.</strong> Each visitor's details, your voice note and their Hot List score go straight from your iPhone to the CRM you chose: BoldTrail, Follow Up Boss, or the webhook address you enter. They don't pass through our servers. Your CRM's own privacy policy then applies. Your CRM key or token is stored in your iPhone's Keychain.</li>
+    <li><strong>QR sign-ins, if you use them.</strong> When a visitor signs in by scanning your QR code, their phone encrypts the sign-in with a key that only your device holds, then leaves it on our relay (run on Cloudflare) until your device collects it. The relay can't open it: we never see the visitor's name, number or answers. Each sign-in is deleted from the relay as soon as your device picks it up, and after 30 days at most. We don't log visitors' IP addresses.</li>
+    <li><strong>Purchases.</strong> Apple processes all payments. We never receive your card details, name or email.</li>
+    <li><strong>Subscription status.</strong> We use RevenueCat to confirm your subscription. It receives a random app user ID and your purchase history from Apple, never your name, your visitors' details or your messages. See <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>.</li>
+    <li><strong>App Store statistics.</strong> Apple may share anonymous usage and crash data with us if you agreed to share it with app developers in your iPhone settings.</li>
+  </ul>
+
+  <h3>Seller reports</h3>
+  <p>A seller report shares visitor counts, interest levels and comments about the home. It never includes visitors' names or contact details, and Hotlist leaves out personal details such as budgets or family plans. You see the report before you share it.</p>
+
+  <h3>Children</h3>
+  <p>Hotlist is a business tool and is not directed at children under 13. We do not knowingly collect information from them.</p>
+
+  <h3>Your choices</h3>
+  <p>Deleting Hotlist deletes everything it stored on your iPhone. To remove the copy in iCloud, turn off Sync with iCloud in Hotlist, then go to iPhone Settings, your name, iCloud, Manage Storage, Hotlist. Visitor details already sent to your CRM stay there until you delete them in your CRM. To ask about or delete the subscription records RevenueCat holds, email us at the support address above. We handle personal information in line with Canada's Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+
+  <h3>Changes</h3>
+  <p>If this policy changes, we'll update the effective date above. Material changes will also be noted in the app's release notes.</p>
+</section>
+
+<section id="visitors" aria-labelledby="visitors-h">
+  <h2 id="visitors-h">If you signed in at an open house</h2>
+  <p>The real estate agent hosting the open house collected your details with Hotlist. They're stored on that agent's devices (and in their CRM, if they use one), not with us: we never see them. If you signed in by scanning a QR code, your phone encrypted your details for the agent's device before sending them; our relay only held the locked copy until the agent's device collected it.</p>
+  <ul class="plain">
+    <li><strong>To stop texts,</strong> reply STOP to any text from the agent, or ask them directly. You only get texts if you ticked the text box when you signed in.</li>
+    <li><strong>To see, correct or delete your details,</strong> contact the agent who hosted the open house. Their name and number are in the texts they send.</li>
+    <li><strong>If you're working with another agent,</strong> you said so at sign-in and Hotlist doesn't write follow-ups to you.</li>
+  </ul>
+</section>
+
+<section id="terms" aria-labelledby="terms-h">
+  <h2 id="terms-h">Terms of use</h2>
+  <p>Hotlist is licensed under Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Licensed Application End User License Agreement</a>, plus the points below.</p>
+
+  <h3>Subscription</h3>
+  <p>Hotlist Pro is $14.99 per month or $99.99 per year (US prices; other countries are shown in the App Store), each with a 14-day free trial. Payment is charged to your Apple Account when the trial ends. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel any time in your Apple Account settings.</p>
+
+  <h3>Your content and your visitors</h3>
+  <p>Your visitors' details and your notes belong to you, and you can export them at any time. You're responsible for how you use them, including getting visitors' consent before texting them and following the texting and anti-spam laws that apply to you (such as Canada's CASL and the US TCPA). Hotlist records consent at sign-in to help, but it isn't legal advice.</p>
+
+  <h3>Texts and CRM connections</h3>
+  <p>Hotlist writes texts for you to review; you choose whether to send each one. CRM connections depend on BoldTrail, Follow Up Boss and other services we don't control, and they may change or be unavailable at times.</p>
+</section>
+
+<footer>Hotlist: Open House Follow Up. Support: andersonapps.help@gmail.com</footer>
+</main>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    var b = this;
+    navigator.clipboard.writeText('andersonapps.help@gmail.com').then(function () {
+      b.textContent = 'Copied';
+      setTimeout(function () { b.textContent = 'Copy address'; }, 2000);
+    });
+  });
+</script>
+</body>
+</html>
